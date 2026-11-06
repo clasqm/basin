@@ -1,10 +1,11 @@
 # basin
+
 A small QBASIC-compatible BASIC interpreter
 
-Forked from https://sourceforge.net/projects/basin/
+Forked from https://sourceforge.net/projects/basin/ for compiling under the Haiku Operating System
 
 
-   basin ,simple QBASIC interpreter.
+   basin, a simple QBASIC interpreter.
    Copyright (C) 2009-2011  #pragma, Evg
 
    This program is free software: you can redistribute it and/or modify it under
@@ -19,7 +20,6 @@ Forked from https://sourceforge.net/projects/basin/
 
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
 
 1) First run configure script in terminal(after you moved to sources folder):
 
@@ -45,7 +45,8 @@ sudo apt-get install libsdl-dev
 
 
 ================================================================================
-    If you planning to add functionality to interpreter,first of all,compile the
+
+    If you are planning to add functionality to interpreter,first of all,compile the
 
 program and run the test_script.All tests must write message '** TEST PASSED **'
 
@@ -59,11 +60,12 @@ changes in  sources  of interpreter,re-make it and run test_script. Your changes
 
 must  not  change  reaction  of  the  program  to  errors, and  all  tests  must 
 
-be completed  with '** TEST PASSED **'  message. If you see '** TEST FAILED **',
+be completed  with `** TEST PASSED **`  message. If you see `** TEST FAILED **`,
 
 find why this happening and try to fix it. If you need to build new sources with
 
-errors  to be checked, put the sources in the  /test/  folder and run tmpl_maker 
+errors  to be checked, put the sources in the  `test`  folder and run tmpl_maker 
 
 script.This script will build all needed templates from stderr.
+
 ================================================================================
