@@ -1,0 +1,10 @@
+LET C = 0
+WHILE C < 2 
+  IF C THEN
+    LET SHAMAN = 999
+  ELSE
+    LET B = SHAMAN + 1
+    END 
+  END
+  LET C = C + 1
+WEND

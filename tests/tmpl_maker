@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# basin ,simple QBASIC interpreter.
+# Copyright (C) 2009-2011  #pragma, Evg
+
+# This program is free software: you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation,  either  version  3  of the License, or(at your option) any later
+# version.
+
+# This  program  is  distributed  in  the  hope  that  it  will  be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+# details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+# Path to interpreter
+BSC=../bin/basin
+
+# Path to directory with sources for tests
+SRC_DIR=./sources
+
+# For each file *.bas in SRC_DIR
+for t in `ls $SRC_DIR/*.bas` ; do
+  # Run interpreter, and put in template file output of the program
+  $BSC --noinit-errors $t 2>$t.stdout>/dev/null
+done

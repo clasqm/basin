@@ -1,0 +1,120 @@
+/*
+   basin ,simple QBASIC interpreter.
+   Copyright (C) 2009-2011  #pragma, Evg
+
+   This program is free software: you can redistribute it and/or modify it under
+   the terms of the GNU General Public License as published by the Free Software
+   Foundation,  either  version  3  of the License, or(at your option) any later
+   version.
+
+   This  program  is  distributed  in  the  hope  that  it  will  be useful, but
+   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+   FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+   details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
+/* This is syntax as it implemented in "basin" interpreter.
+
+ * ConstIntValue = ["+" | "-"] CONST_INT
+ *
+ * Condexpression = expression ("=" | "<>" | "<" | "<=" | ">" | ">=") expression
+ * expression = ["+" | "-"] Term { ("+" | "-") Term }
+ * Term = Factor { ("*" | "/") Factor }
+ * Factor = CONST_INT | CONST_FLOAT | CONST_STRING | QualIdent  | "(" Expr ")"
+ * QualIdent = IDENT 
+ * expressionlist = "(" expression { "," expression } ")"
+ * StatementList = SimpleStatement { ":" SimpleStatement }
+ ------------------------------------------------------------------------------
+   LET [QualIdent] = [value]
+ ------------------------------------------------------------------------------
+   PRINT [expressionlist][;|,]
+ ------------------------------------------------------------------------------
+   IF Condexpression THEN StatementList [ELSE StatementList]
+    or
+   IF condition THEN
+    StatementList(s)
+    [ELSE
+    StatementList(s)]
+   END IF
+ ------------------------------------------------------------------------------
+   WHILE Condexpression
+    .
+    .  StatementList(s)
+    .
+   WEND
+ ------------------------------------------------------------------------------
+   DO
+    .
+    .  StatementList(s)
+    .
+   WHILE Condexpression
+ 
+   (Here is need to be LOOP UNTIL instead of WHILE, may be i'll fix it later)
+ ------------------------------------------------------------------------------
+   FOR QualIdent = range1 TO range2 [STEP interval]
+    .
+    .  StatementList(s)
+    .
+   NEXT variable
+   
+   range1 - expression
+   range2 - expression
+   interval - ConstIntValue
+ ------------------------------------------------------------------------------ 
+   GOTO  linelabel
+   
+   (Where linelabel - numeric integer value)
+   With GOTO you can jump backward and forward.
+ ------------------------------------------------------------------------------ 
+   DIM [SHARED] variablename (ConstIntValue[,ConstIntValue, ...])
+                             [AS TYPE], ...
+
+   DIM [SHARED] variablename (ConstIntValue TO ConstIntValue
+                [,ConstIntValue TO ConstIntValue, ...][,ConstIntValue, ...])
+                [AS TYPE],...
+                
+   DIM [SHARED] variablename [AS TYPE], ...
+   
+   TYPE - INTEGER, LONG, SINGLE, DOUBLE, or STRING
+   
+   All three ways can be mixed.            
+ ------------------------------------------------------------------------------
+   SCREEN [ConstIntValue]
+   Now only SCREEN 12 mode is available.Graphics 640x480, 262,144 colors to
+   16 attributes (preferred).Double buffered.Page is created in video memory.
+ ------------------------------------------------------------------------------
+   PRESET (expression, expression) [, color]
+ ------------------------------------------------------------------------------
+   LINE (x1, y1)-(x2, y2) [, [color], [B|BF]]
+   x1 - expression
+   x2 - expression
+   y1 - expression
+   y2 - expression
+   color - ConstIntValue (from 0 to 15)
+ ------------------------------------------------------------------------------
+   CIRCLE (x0, y0), radius
+   x0 - expression
+   y0 - expression
+   radius - expression
+ ------------------------------------------------------------------------------
+   CLS
+ ------------------------------------------------------------------------------
+   END
+ ------------------------------------------------------------------------------
+   BEEP
+ ------------------------------------------------------------------------------
+   CLEAR
+ ------------------------------------------------------------------------------
+   SUB [QualIdent]
+    .
+    .  StatementList
+    .
+   END SUB 
+ ------------------------------------------------------------------------------
+   CALL [QualIdent]
+ ------------------------------------------------------------------------------
+*/ 

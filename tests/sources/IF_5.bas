@@ -1,0 +1,1 @@
+IF a THEN LET a=0

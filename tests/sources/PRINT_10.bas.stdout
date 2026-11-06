@@ -1,0 +1,2 @@
+
+file: ./sources/PRINT_10.bas line: 2 error: Bitwise operations are not allowed with floating point types

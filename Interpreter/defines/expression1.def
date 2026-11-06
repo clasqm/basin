@@ -1,0 +1,45 @@
+/*
+   basin ,simple QBASIC interpreter.
+   Copyright (C) 2009-2011  #pragma, Evg
+
+   This program is free software: you can redistribute it and/or modify it under
+   the terms of the GNU General Public License as published by the Free Software
+   Foundation,  either  version  3  of the License, or(at your option) any later
+   version.
+
+   This  program  is  distributed  in  the  hope  that  it  will  be useful, but
+   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+   FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+   details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+     EXPR_PROC_DEF(PK_PRINT, "PK_PRINT ","PRINT")   // PRINT
+#ifndef DISABLE_SDL_GRAPHICS
+     EXPR_PROC_DEF(PK_SCREEN,"PK_SCREEN","SCREEN")  // SCREEN
+     EXPR_PROC_DEF(PK_PRESET,"PK_PRESET","PRESET")  // PRESET
+     EXPR_PROC_DEF(PK_LINE,  "PK_LINE  ","LINE")    // LINE
+     EXPR_PROC_DEF(PK_CIRCLE,"PK_CIRCLE","CIRCLE")  // CIRCLE
+#endif
+
+     EXPR_PROC_DEF(PK_USER,  "PK_USER  ","USER_FUNC")   // USER FUNCTION
+
+     EXPR_PROC_DEF(PK_CLS,   "PK_CLS   ","CLS")     // CLS
+     EXPR_PROC_DEF(PK_END,   "PK_END   ","END")     // END
+     EXPR_PROC_DEF(PK_BEEP,  "PK_BEEP  ","BEEP")    // BEEP
+     EXPR_PROC_DEF(PK_CLEAR, "PK_CLEAR ","CLEAR")   // CLEAR
+
+     EXPR_PROC_DEF(PK_SIN,   "PK_SIN   ","SIN")   // SIN()
+     EXPR_PROC_DEF(PK_COS,   "PK_COS   ","COS")   // COS()
+     EXPR_PROC_DEF(PK_TAN,   "PK_TAN   ","TAN")   // TAN()
+     EXPR_PROC_DEF(PK_ATN,   "PK_ATN   ","ATN")   // ATN()
+     EXPR_PROC_DEF(PK_VAL,   "PK_VAL   ","VAL")   // VAL()
+     EXPR_PROC_DEF(PK_STR,   "PK_STR$  ","STR$")  // STR$()
+     EXPR_PROC_DEF(PK_SQR,   "PK_SQR   ","SQR")   // SQR()
+     EXPR_PROC_DEF(PK_ABS,   "PK_ABS   ","ABS")   // ABS()
+     EXPR_PROC_DEF(PK_LEN,   "PK_LEN   ","LEN")   // LEN()
+     EXPR_PROC_DEF(PK_INSTR, "PK_INSTR ","INSTR") // INSTR()
+     EXPR_PROC_DEF(PK_LEFT,  "PK_LEFT  ","LEFT$") // LEFT$()
+     EXPR_PROC_DEF(PK_MID,   "PK_MID   ","MID$")  // MID$()
+     EXPR_PROC_DEF(PK_INT,   "PK_INT   ","INT")  // INT()

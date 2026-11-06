@@ -1,0 +1,2 @@
+
+file: ./sources/source10.bas line: 13 error: Bitwise operations are not allowed with floating point types

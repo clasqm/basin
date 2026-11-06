@@ -1,0 +1,81 @@
+/*
+   basin ,simple QBASIC interpreter.
+   Copyright (C) 2009-2011  #pragma, Evg
+
+   This program is free software: you can redistribute it and/or modify it under
+   the terms of the GNU General Public License as published by the Free Software
+   Foundation,  either  version  3  of the License, or(at your option) any later
+   version.
+
+   This  program  is  distributed  in  the  hope  that  it  will  be useful, but
+   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+   FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+   details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+       ERRORS_DEF(UNDEFINED_SYMBOL,"Undefined symbol: ")
+       ERRORS_DEF(UNDEFINED_ARRAY,"Undefined array: ")
+       ERRORS_DEF(UNDEFINED_FUNCTION,"Undefined function: ")
+       ERRORS_DEF(UNKNOWN_IDENTIFIER,"Unknown identifier: ")
+       ERRORS_DEF(UNEXPECTED_SYMBOL,"Unexpected symbol: ")
+       ERRORS_DEF(WRONG_EXPRESSION,"Wrong expression")
+       ERRORS_DEF(NON_INIT_VAR,"Non initialized variable: ")
+       ERRORS_DEF(WRONG_DEFINITION,"Wrong definition")
+       ERRORS_DEF(UNKNOWN_TYPE,"Unknown type")
+       ERRORS_DEF(WRONG_OPTION_STATEMENT,"Wrong OPTION statement")
+       ERRORS_DEF(WRONG_LET_STATEMENT,"Wrong let statement")
+       ERRORS_DEF(WRONG_FLOAT_CONSTANT,"Wrong float constant")
+       ERRORS_DEF(WRONG_PARAMETERS_LIST,"Wrong parameters list")
+       ERRORS_DEF(WRONG_PARAMETER_TYPE,"Wrong parameter type")
+       ERRORS_DEF(TOO_FEW_PARAMETERS,"Too few parameters in function")
+       ERRORS_DEF(TOO_MUCH_PARAMETERS,"Too much parameters in function")
+       ERRORS_DEF(WRONG_EXPRESSIONS_LIST,"Wrong expressions list")
+       ERRORS_DEF(DUPLICATE_CASE_LABEL,"Duplicate label: ")
+       ERRORS_DEF(UNLINKED_LABEL,"Unlinked label: ")
+       ERRORS_DEF(UNKNOWN_CASE_LABEL,"Unknown label: ")
+       ERRORS_DEF(UNKNOWN_SIZE,"Size of massive unknown")
+       ERRORS_DEF(UNKNOWN_VIDEO_MODE,"Unknown video mode")
+       ERRORS_DEF(UNKNOWN_COLOR_NUMBER,"Unknown color number.Must be 0-15")
+       ERRORS_DEF(CANNOT_SET_DISPLAY,"Video: cannot set display")
+       ERRORS_DEF(CANNOT_INIT_VIDEO_SUBSYS,"Graphics: Cannot initialize video subsystem")
+       ERRORS_DEF(MUST_SET_DISPLAY,"Must use SCREEN before any graphics statement")
+       ERRORS_DEF(LARGE_VARIABLE,"Too large variable: ")
+       ERRORS_DEF(VARIABLE_OUT_OF_RANGE,"Variable out of range")
+       ERRORS_DEF(PARAM_OUT_OF_STRING_RANGE,"Parameter out of string range")
+       ERRORS_DEF(PARAM_NOT_VALID,"Parameters not valid")
+       ERRORS_DEF(ZERO_SIZE_DIM,"Zero size dimension is restricted: ")
+       ERRORS_DEF(CONFLICTING_DECLARATION,"Conflicting declaration of: ")
+       ERRORS_DEF(ERASE_ARRAY,"Array have to be erased first")
+       ERRORS_DEF(COLON_EXPECTED,"Colon expected")
+       ERRORS_DEF(IDENT_OR_STR_CON_EXPECTED,"Identifier or string constant expected")
+       ERRORS_DEF(CONST_STR_EXPECTED,"String constant expected")
+       ERRORS_DEF(NUMBER_EXPECTED,"Numerical value expected")
+       ERRORS_DEF(FI_EXPECTED,"FI expected")
+       ERRORS_DEF(THEN_EXPECTED,"THEN expected")
+       ERRORS_DEF(COMMA_EXPECTED,"Comma expected")
+       ERRORS_DEF(CONST_REQUIRED,"Constant value required")
+       ERRORS_DEF(LEFTP_EXPECTED,"'(' expected")
+       ERRORS_DEF(RIGHTP_EXPECTED,"')' expected")
+       ERRORS_DEF(LEFTCBR_EXPECTED,"'{' expected")
+       ERRORS_DEF(RIGHTCBR_EXPECTED,"'}' expected")
+       ERRORS_DEF(IDENTIFIER_EXPECTED,"Identifier expected")
+       ERRORS_DEF(DELIMETER_EXPECTED,"Delimeter expected (for example: '=')")
+       ERRORS_DEF(RELATION_SIGN_EXPECTED,"Relation sign expected")
+       ERRORS_DEF(QUOT_MARK_EXPECTED,"\" expected")
+       ERRORS_DEF(END_OF_LINE_EXPECTED,"End of line expected")
+       ERRORS_DEF(KEYWORD_EXPECTED,"Keyword expected")
+       ERRORS_DEF(BEGIN_EXPECTED,"Keyword BEGIN expected")
+       ERRORS_DEF(LOOP_EXPECTED,"Keyword LOOP expected")
+       ERRORS_DEF(LABEL_EXPECTED,"Label expected")
+       ERRORS_DEF(CONSTANT_EXPECTED,"Constant expression expected")
+       ERRORS_DEF(EXPECTED_VARIABLE,"Wrong variable.Variable expected: ")
+       ERRORS_DEF(TYPENAME_EXPECTED,"Typename expected.")
+       ERRORS_DEF(EMPTY_STATEMENT,"Empty statement")
+       ERRORS_DEF(DIVIDE_BY_ZERO,"Divide by zero")
+       ERRORS_DEF(EMPTY_STATEMENTS_LIST,"List of statements expected")
+       ERRORS_DEF(BITWISE_OPERATIONS_WITH_FLOAT,"Bitwise operations are not allowed with floating point types")
+       ERRORS_DEF(NUMERIC_OVERFLOW,"Numeric overflow")
+       ERRORS_DEF(OPERATION_UNSUPPORTED,"Operation unsupported")
